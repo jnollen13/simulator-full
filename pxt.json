@@ -1,5 +1,5 @@
 {
-    "name": "simulator",
+    "name": "simulator-full",
     "description": "",
     "dependencies": {
         "device": "*",

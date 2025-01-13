@@ -19,14 +19,14 @@ namespace SpriteKind {
     export const easy = SpriteKind.create()
     export const hard = SpriteKind.create()
     export const normal = SpriteKind.create()
-    export const button = SpriteKind.create()
+    export const restsrt = SpriteKind.create()
 }
 sprites.onOverlap(SpriteKind.Player, SpriteKind.attack6, function (sprite, otherSprite) {
     statusbar.value += -2
     pause(158)
 })
 controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    game.gameOver(false)
+    game.reset()
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.attack5, function (sprite, otherSprite) {
     statusbar.value += -8
@@ -49,7 +49,7 @@ statusbars.onZero(StatusBarKind.Health, function (status) {
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.attack8, function (sprite, otherSprite) {
     statusbar.value += -1
-    pause(111)
+    pause(77)
 })
 sprites.onOverlap(SpriteKind.attack4, SpriteKind.attack4, function (sprite, otherSprite) {
     tiles.placeOnTile(mySprite4, tiles.getTileLocation(randint(1, 7), 2))
@@ -64,11 +64,11 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.start, function (sprite, otherSp
         mySprite.setImage(assets.image`sprite`)
         tiles.setCurrentTilemap(tilemap`level2`)
         tiles.placeOnTile(mySprite, tiles.getTileLocation(5, 5))
+        mySprite16 = sprites.create(assets.image`forfit vutton`, SpriteKind.restsrt)
+        mySprite16.setPosition(147, 13)
         pause(1000)
         textSprite = textsprite.create("forfit")
-        textSprite.setPosition(114, 13)
-        mySprite16 = sprites.create(assets.image`forfit vutton`, SpriteKind.button)
-        mySprite16.setPosition(140, 15)
+        textSprite.setPosition(119, 13)
         mySprite2 = sprites.create(assets.image`ball1`, SpriteKind.attack0)
         mySprite3 = sprites.create(assets.image`ball0`, SpriteKind.attack0)
         tiles.placeOnTile(mySprite2, tiles.getTileLocation(1, 2))
@@ -325,8 +325,8 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.start, function (sprite, otherSp
         pause(100)
         statusbar.value += 45
         pause(200)
-        statusbar.max = 175
-        statusbar.value = 175
+        statusbar.max = 111
+        statusbar.value = 111
         pause(100)
         game.splash("final fight!!!!", "get ready!!!!")
         mySprite.changeScale(-0.113, ScaleAnchor.Middle)
@@ -507,7 +507,6 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.start, function (sprite, otherSp
         game.showLongText("just die already!", DialogLayout.Bottom)
         sprites.destroyAllSpritesOfKind(SpriteKind.attack8)
         pause(500)
-        mySprite2.setKind(SpriteKind.attack8)
         for (let index = 0; index < 29; index++) {
             pause(100)
             mySprite2.changeScale(0.1, ScaleAnchor.Middle)
@@ -541,8 +540,8 @@ let mySprite7: Sprite = null
 let mySprite6: Sprite = null
 let mySprite5: Sprite = null
 let mySprite3: Sprite = null
-let mySprite16: Sprite = null
 let textSprite: TextSprite = null
+let mySprite16: Sprite = null
 let mySprite4: Sprite = null
 let statusbar: StatusBarSprite = null
 let mySprite: Sprite = null
