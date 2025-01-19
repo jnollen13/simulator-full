@@ -517,6 +517,18 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.start, function (sprite, otherSp
         sprites.destroy(mySprite2)
         pause(100)
         game.setGameOverMessage(true, "game beaten!!")
+        sprites.destroy(mySprite16)
+        sprites.destroy(textSprite)
+        sprites.destroy(mySprite)
+        sprites.destroy(statusbar)
+        tiles.setCurrentTilemap(tilemap`level12`)
+        textSprite = textsprite.create("credits")
+        textSprite.setPosition(71, 9)
+        textSprite2 = textsprite.create("planning          Riker")
+        textSprite2.setPosition(78, 31)
+        textSprite3 = textsprite.create("developer        Jerome")
+        textSprite3.setPosition(78, 78)
+        pause(11486)
         game.gameOver(true)
     }
 })
@@ -528,6 +540,8 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.attack3, function (sprite, other
     statusbar.value += -6
     pause(56)
 })
+let textSprite3: TextSprite = null
+let textSprite2: TextSprite = null
 let mySprite15: Sprite = null
 let mySprite14: Sprite = null
 let mySprite13: Sprite = null
