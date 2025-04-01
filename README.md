@@ -1,7 +1,7 @@
  
 
 
-> Open this page at [https://jnollen13.github.io/simulator/](https://jnollen13.github.io/simulator/)
+> Open this page at https://arcade.makecode.com/S07243-34290-65306-50962
 
 ## Use as Extension
 
